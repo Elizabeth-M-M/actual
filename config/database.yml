@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: react_rails_api_project_template_development
+  database: render-development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -79,15 +79,12 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+
+
+  production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-
-  # production:
-  # <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
-  # database: render_production
-  # username: kiosk
-  # password: <%= ENV['KIOSK_DATABASE_PASSWORD'] %>
-  # username: render
-  # password: <%= ENV['RENDER_DATABASE_PASSWORD'] %>
+  database: render_production
+  username: actual
+  password: <%= ENV['ACTUAL_DATABASE_PASSWORD'] %>
+  
